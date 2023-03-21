@@ -1,0 +1,13 @@
+\documentclass[tikz, margin=5mm]{standalone}
+  
+\begin{document}
+    \begin{tikzpicture}
+    \draw[dashed] (-2.99,-2.99) grid (2.99,2.99);
+    \draw[thick, -&gt;] (-3,0) -- (3,0)node[pos=1,below]{$x$};
+    \draw[thick, -&gt;] (0,-3) -- (0,3)node[pos=1,left]{$y$};
+    \draw[thick, domain={-3}:{0}, samples=100] plot (\x,{\x+1});
+    \draw[thick, domain={0}:{3}, samples=100] plot (\x,{\x});
+    \node[circle, draw=black, inner sep=1.5pt, fill=white](a) at (0,1){};
+    \node[circle, draw=black, inner sep=1.5pt, fill=black](b) at (0,0){};
+    \end{tikzpicture}
+\end{document}
